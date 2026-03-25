@@ -312,18 +312,33 @@ st.markdown("""
     }
 
     /* ── Streamlit Widget Tweaks ── */
-    .stTextArea textarea {
-        background: rgba(255,255,255,0.04) !important;
+    div[data-baseweb="textarea"] {
+        background-color: #1b263b !important;
         border: 1px solid rgba(255,255,255,0.1) !important;
         border-radius: 14px !important;
-        color: #e0e6ff !important;
+    }
+    div[data-baseweb="textarea"] > div {
+        background-color: transparent !important;
+    }
+    .stTextArea textarea {
+        background-color: transparent !important;
+        color: #ffffff !important;
         font-family: 'Inter', sans-serif !important;
         font-size: 0.95rem !important;
         padding: 16px !important;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+    .stTextArea textarea::placeholder {
+        color: rgba(255,255,255,0.5) !important;
+        -webkit-text-fill-color: rgba(255,255,255,0.5) !important;
     }
     .stTextArea textarea:focus {
+        border-color: transparent !important;
+        box-shadow: none !important;
+    }
+    div[data-baseweb="textarea"]:focus-within {
         border-color: rgba(102,126,234,0.5) !important;
-        box-shadow: 0 0 0 3px rgba(102,126,234,0.15) !important;
+        box-shadow: 0 0 0 2px rgba(102,126,234,0.25) !important;
     }
     .stSlider > div > div {
         background: rgba(255,255,255,0.06) !important;
